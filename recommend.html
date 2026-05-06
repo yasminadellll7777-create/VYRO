@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recommend - VYRO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="body-background">
+<nav>
+  <h1 class="logo">VYRO</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="cars.html">Cars</a></li>
+    <li><a href="compare.html">Compare</a></li>
+    <li><a href="recommend.html" class="active">Recommend</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+<section class="page">
+  <h1>Let Us Find Your Next Masterpiece</h1>
+  <p>Answer a few questions and discover your perfect car</p>
+</section>
+<section class="quiz">
+  <h2>What are you looking for?</h2>
+  <div class="choices">
+    <button onclick="showCars('family')">👪 Family</button>
+    <button onclick="showCars('sport')">🏎️ Sport</button>
+    <button onclick="showCars('work')">💼 Work</button>
+  </div>
+</section>
+<section class="results" id="results">
+  <div class="car-card">
+    <img src="photos/image_d5bfa727 tesla.png">
+    <span class="badge">Top Rated</span>
+    <h3>Tesla Model S</h3>
+    <p>⭐⭐⭐⭐⭐ 4.9</p>
+  </div>
+</section>
+<script src="js/script.js"></script>
+</body>
+</html>
