@@ -1,0 +1,674 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    align-items: center;
+    padding: 20px 50px;
+    width:100%;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+nav ul{
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    padding: 10px 20px; 
+    border: 1px solid #ff003f;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    box-shadow:0 0 10px #ff003f;
+}
+nav li{
+    list-style: none;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0,3s;
+    position: relative;
+}
+nav a:hover{
+    color: #ff003f;
+    text-shadow:0 0 10px #ff003f;
+}
+nav a::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background:#aaa;
+}
+nav h1{
+    font-family:initial;
+    color: #ff003f;
+    text-shadow:0 0 10px #ffffff;
+    margin-right:auto;
+    font-size: 50px;
+}
+nav a.active{
+    color: #ff003f;
+} /*this is for thr underline in the nav bar*/
+nav a.active::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: #ff003f;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.1);
+  padding: 5px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  margin:18px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+}
+
+.search-box i {
+  color: white;
+  cursor: pointer;
+}
+
+.search-box i:hover {
+  color: #ff003f;
+}       
+body{
+    font-family:'Poppins', sans-seri ;
+    background: url("../photos/background\ body\ 2.png") no-repeat center center fixed;
+  background-size: cover;
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.cars-container{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+.car-card{
+    background: #111;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 250px;
+    transition: 0.3s;
+}
+.card-image{
+    width: 100%;
+    border-radius: 10px;
+}
+.car-card h3{
+    margin: 10px 0;
+}
+.car-card button{
+    padding: 10px;
+    border: none;
+    background: #ff003f;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff003f;
+}
+.car-card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ff003f;
+}
+.hero{
+    height: 100vh;
+    background: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 50px;
+    flex-direction: column;
+}
+.overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+.hero-content{
+    position: relative;
+    z-index :2;
+}
+.hero h1{
+    font-size:60px;
+    text-shadow: 0 0 10px #ff003f;
+    margin-top: 20px;
+}
+.hero h2{
+    color: red;
+    margin:40px;
+    text-shadow: 0 0 5px #ff003f;
+}
+.hero p{
+    margin-top: -12px;
+    margin-bottom: 30px;
+    font-family:initial;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+.hero button{
+    padding: 12px 25px;
+    border: none;
+    font-weight: bold;
+    background: #ff003f;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 15px #ff003f;
+    transition: 0,3s;
+    padding: 12px 25px;
+    position: 0.3s;
+    border-radius: 12px;
+}
+.hero button:hover{
+    transform: scale(1.1);
+    background: darkred;
+}
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mouse {
+  width: 25px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 20px;
+  position: relative;
+}
+
+.mouse::before {
+  content: "";
+  width: 4px;
+  height: 8px;
+  background: white;
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  transform: translateX(-50%);
+  animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+  0% { top: 8px; opacity: 1; }
+  100% { top: 20px; opacity: 0; }
+}
+.featured {
+  padding: 80px 50px;
+  color: white;
+  text-align: center;
+  flex:1;
+}
+.featured h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.car-cardds {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 15px;
+  transition: 0.3s;
+  color: white;
+}
+.car-cardds img {
+  width: 100%;
+  border-radius: 10px;
+}
+.car-cardds:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(255,0,63,0.5);
+}
+.car-cardds button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  background: #ff003f;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.car-cardds button:hover {
+  background: darkred;
+  box-shadow: 0 0 10px #ff003f;
+}
+.stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px 20px;
+
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+
+  color: white;
+  text-align: center;
+}
+
+.stat h2 {
+  font-size: 35px;
+  color: #ff003f;
+}
+.stat p {
+  font-size: 16px;
+}
+.auth-buttons {
+  display: flex;
+  gap: 15px;
+  margin-left: 12px;
+}
+.login {
+  background: white;
+  color: #ff003f;
+  text-decoration: none;
+  border-radius: 20px;
+  padding:6px 15px;
+  margin-left: 12px;
+  transition: 0.5s
+}
+.login:hover{
+    box-shadow: 0 0 10px #ff003f;
+}
+.signup {
+  background: #ff003f;
+  color: white;
+  padding: 6px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.signup:hover {
+  box-shadow: 0 0 10px #ff003f;
+  color: whitesmoke;
+}
+.footer {
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  margin-top: 50px;
+}
+.footer h2 {
+  color: #ff003f;
+  margin-bottom: 15px;
+}
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 15px 0;
+}
+.socials a {
+  color: white;
+  font-size: 20px;
+  transition: 0.3s;
+  text-shadow:0 0 10px #ff003f;
+}
+.socials a:hover {
+  color: #ff003f;
+  transform: scale(1.2);
+}
+.copy {
+  margin-top: 10px;
+  opacity: 0.7;
+  text-align:center;
+}
+.body-background{
+  background: url(../photos/car\ page\ body\ \ background\ and\ the\ others.png) no-repeat center center/cover;
+  background-size: cover;
+}
+.car-card {
+  background: rgba(255, 255, 255, 0.08);
+  width:100%;
+  max-width: 350px;
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 15px;
+  color: white;
+  text-align: center;
+  transition: 0.3s;
+  overflow: hidden;
+}
+.car-card img {
+  width: 100%;
+  height: 180px;
+  border-radius:33px;
+  object-fit: contain;
+  transition: 0.3s;
+}
+.car-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(255, 0, 63, 0.6);
+}
+
+.car-card:hover img {
+  transform: scale(1.05);
+}
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+.car-card button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  background: #ff003f;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.car-card button:hover {
+  background: darkred;
+  box-shadow: 0 0 10px #ff003f;
+}
+.car-card h3 {
+  margin: 10px 0 5px;
+  letter-spacing: 1px;
+}
+.car-card p {
+  opacity: 0.8;
+}
+.cars111{
+  text-shadow: 0 0 10px ;
+  font-family: initial;
+  margin: 30px 10px;
+}
+.lx2222{
+  text-shadow: 0 0 10px ;
+  font-family: initial;
+  margin: 30px 10px;
+}
+.electric4{
+  text-shadow: 0 0 10px ;
+  font-family: initial;
+  margin: 30px 10px;
+}
+.cars-page-layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  align-items: flex-start;
+}
+.filters {
+  width: 220px;
+  padding: 15px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  color: white;
+}
+.filters h3 {
+  margin-bottom: 15px;
+}
+.filters label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.filters select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+.cars-content {
+  flex: 1;
+  min-width: 0;
+}
+.hero2{
+  text-align: center;
+  position: relative;
+  z-index :2;
+  margin:170px
+}
+.hero2 h2{
+    font-size:60px;
+    text-shadow: 0 0 10px #ff003f;
+    align-items: center;
+}
+.hero2 p{
+  font-family: initial;
+  font-size: 20px;
+  font-weight: bold;
+  margin:20px;
+}
+.compare-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+}
+.compare-box {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  width: 300px;
+  text-align: center;
+  color: white;
+}
+.compare-box select {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: none;
+}
+.car-info {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.car-info img {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.compare-page {
+  padding: 40px;
+}
+.compare-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+.car-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  width: 300px;
+  text-align: center;
+  color: white;
+  transition: 0.3s;
+}
+.car-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+.car-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px #ff003f;
+}
+.vs {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 15px #ff003f;
+}
+.compare-row {
+  animation: fadeIn 0.8s ease;
+}
+.quiz {
+  text-align: center;
+  padding: 40px;
+  color: white;
+}
+.choices {
+  margin-top: 20px;
+}
+.choices button {
+  padding: 12px 20px;
+  margin: 10px;
+  border: none;
+  background: #ff003f;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.choices button:hover {
+  background: darkred;
+}
+.results {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+.badge {
+  position: absolute;
+  background: #ff003f;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  top: 10px;
+  left: 10px;
+}
+.car-card {
+  position: relative;
+}
+.about-box .team {
+  text-align: center;
+  padding: 40px;
+  color: white;
+}
+.page{
+  margin: 20px;
+  margin-top: 100px;
+}
+.page h1{
+  font-size:60px;
+  text-shadow: 0 0 10px #ff003f;
+  margin-top: 20px;
+  text-align: center;
+}
+.page p{
+  text-align: center;
+}
+.words p{
+  text-align: center;
+
+}
+.about-box{
+  margin: 20px;
+  text-align: center;
+}
+.about-box h2{
+   font-size:60px;
+  text-shadow: 0 0 10px #ff003f;
+  margin-top: 20px;
+  text-align: center;
+}
+.team h2{
+ font-size:60px;
+  text-shadow: 0 0 10px #ff003f;
+  margin-top: 20px;
+  text-align: center;
+}
+.member {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  margin: 15px auto;
+  padding: 20px;
+  width: 300px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+.member:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px #ff003f;
+}
+.contact-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+.contact-form {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+.contact-form button {
+  padding: 12px;
+  border: none;
+  background: #ff003f;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.contact-form button:hover {
+  background: darkred;
+  box-shadow: 0 0 15px #ff003f;
+}
